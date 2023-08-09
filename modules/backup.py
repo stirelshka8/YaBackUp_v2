@@ -8,7 +8,7 @@ def pack_directory(source_dirs, destination_dir='/tmp', excluded_dirs=None):
         excluded_dirs = []
 
     timestamp = str(int(datetime.timestamp(datetime.now())))
-    tar_filename = os.path.join(destination_dir, f'archive_{timestamp}.tar')
+    tar_filename = os.path.join(destination_dir, f'TEMPBACKUP_{timestamp}')
 
     with tarfile.open(tar_filename, 'w') as tar:
         for source_dir in source_dirs:
@@ -26,12 +26,3 @@ def pack_directory(source_dirs, destination_dir='/tmp', excluded_dirs=None):
                         with open('log.txt', 'a') as log:
                             log.write(f"[{timestamp}] >> Пропуск нечитаемого файла: {file_path}\n")
     return tar_filename
-
-
-def stert():
-    # Пример вызова функции
-    source_directory = ['/etc', '/usr/bin', '/usr/sbin', '/var/www']
-    destination_directory = '/mnt/work'  # Замените на свой путь к целевой директории
-    excluded_directories = ['games', 'share']  # Замените на список директорий, которые нужно исключить
-
-    print(pack_directory(source_directory, destination_directory, excluded_directories))
