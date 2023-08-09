@@ -4,6 +4,7 @@ from datetime import datetime
 
 
 def pack_directory(source_dirs, destination_dir='/tmp', excluded_dirs=None):
+
     if excluded_dirs is None:
         excluded_dirs = []
 
@@ -24,5 +25,9 @@ def pack_directory(source_dirs, destination_dir='/tmp', excluded_dirs=None):
                         tar.add(file_path, arcname=os.path.join(os.path.basename(source_dir), rel_path))
                     else:
                         with open('log.txt', 'a') as log:
-                            log.write(f"[{timestamp}] >> Пропуск нечитаемого файла: {file_path}\n")
+                            log.write(f"[{timestamp}]*[WARN] >> Пропуск нечитаемого файла: {file_path}\n")
+
+    with open('log.txt', 'a') as log:
+        log.write(f"[{timestamp}] >> Создан временный файл: {tar_filename}\n")
+
     return tar_filename
