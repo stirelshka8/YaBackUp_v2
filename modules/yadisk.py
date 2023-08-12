@@ -1,4 +1,5 @@
 from modules.backup import pack_directory
+from modules.log import write_log
 from datetime import datetime
 import configparser
 import yadisk
@@ -15,16 +16,12 @@ def upload_to_yadisk(file_path, destination_path, token):
         run_yadisk = yadisk.YaDisk(token=token)
         run_yadisk.upload(file_path, destination_path)
 
-        with open('log.txt', 'a') as log:
-            log.write(f"[{str(int(datetime.timestamp(datetime.now())))}] >> Бэкап загружен на Яндекс.Диск "
-                      f"({destination_path}) \n")
+        write_log(f'Файл бэкапа {file_path} загружен на Яндекс.Диск в директорию {destination_path}. ')
     except Exception as ex:
-        with open('log.txt', 'a') as log:
-            log.write(f"[{str(int(datetime.timestamp(datetime.now())))}] >> ERROR: {ex}\n")
+        write_log(ex, 'ERROR')
     finally:
-        with open('log.txt', 'a') as log:
-            log.write(f"[{str(int(datetime.timestamp(datetime.now())))}] >> Временный файл {file_path} УДАЛЕН \n")
         os.remove(file_path)
+        write_log(f'Временный файл {file_path} УДАЛЕН')
 
 
 def start():
@@ -36,7 +33,7 @@ def start():
     upload_to_yadisk(pack_directory(source_directory, backup_dir, excluded_directories),
                      f"/{config['SETTING']['NAME_BACKUP_DIR_CLOUD']}/"
                      f"{config['SETTING']['NAME_BACKUP']}_"
-                     f"{str(int(datetime.timestamp(datetime.now())))}"+".tar",
+                     f"{str(int(datetime.timestamp(datetime.now())))}",
                      yandex_token)
 
 # https://pypi.org/project/yadisk/
