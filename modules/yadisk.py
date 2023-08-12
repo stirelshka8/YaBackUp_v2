@@ -43,6 +43,26 @@ def deleting_old_backups(backup_dir, token):
             write_log(f"Архив бэкапа {i['name']} старше {int(config['SETTING']['DAYS_DEL'])} дней. УДАЛЕН!", "DELETE")
 
 
+def deleting_max_backups(backup_dir, token):
+    run_yadisk = yadisk.YaDisk(token=token)
+    list_files = []
+
+    for i in list(run_yadisk.listdir(backup_dir)):
+        list_files.append(i['name'])
+
+    print(len(list_files))
+
+    if len(list_files) >= (int(config['SETTING']['MAX_BACKUP']) + 1):
+        num_extra_files = len(list_files) - int(config['SETTING']['MAX_BACKUP'])
+        files_to_delete = sorted(list_files)[:num_extra_files]
+        write_log(f"Общее количество бэкапов {len(list_files)}, максимальное хранимое количество"
+                  f" {config['SETTING']['MAX_BACKUP']}.", "DELETE")
+
+        for file_name in files_to_delete:
+            run_yadisk.remove(backup_dir + "/" + file_name, permanently=True)
+            write_log(f"Бэкап {file_name} удален!", "DELETE")
+
+
 def information(token):
     run_yadisk = yadisk.YaDisk(token=token)
     ya_info = run_yadisk.get_disk_info()
@@ -75,7 +95,9 @@ def start():
                          yandex_token)
 
         deleting_old_backups(config['SETTING']['NAME_BACKUP_DIR_CLOUD'], yandex_token)
+        deleting_max_backups(config['SETTING']['NAME_BACKUP_DIR_CLOUD'], yandex_token)
     else:
         write_log(f"Произошла неизвестная ошибка!", "error")
+
 
 # https://pypi.org/project/yadisk/
