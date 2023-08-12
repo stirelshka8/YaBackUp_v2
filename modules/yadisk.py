@@ -2,7 +2,6 @@ from modules.backup import pack_directory
 from datetime import datetime, timedelta
 from modules.log import write_log
 from hurry.filesize import size
-from datetime import datetime
 import configparser
 import yadisk
 import time
@@ -50,8 +49,6 @@ def deleting_max_backups(backup_dir, token):
     for i in list(run_yadisk.listdir(backup_dir)):
         list_files.append(i['name'])
 
-    print(len(list_files))
-
     if len(list_files) >= (int(config['SETTING']['MAX_BACKUP']) + 1):
         num_extra_files = len(list_files) - int(config['SETTING']['MAX_BACKUP'])
         files_to_delete = sorted(list_files)[:num_extra_files]
@@ -71,9 +68,9 @@ def information(token):
     write_log(f"Оставшееся место на Яндекс.Диск {remaining_seat} байт ({size(remaining_seat)})", "disk_info")
 
     if remaining_seat <= 2147483648:
-        write_log(f"Мало места! Осталось - {remaining_seat}байт ({size(remaining_seat)})", "disk_info")
+        write_log(f"Мало места! Осталось - {remaining_seat} байт ({size(remaining_seat)})", "disk_info")
     elif remaining_seat <= 1073741824:
-        write_log(f"Места осталось менее 1 гигабайта!!!! {remaining_seat}байт ({size(remaining_seat)}). "
+        write_log(f"Места осталось менее 1 гигабайта!!!! {remaining_seat} байт ({size(remaining_seat)}). "
                   f"Создание бэкапов остановлено!!!", "disk_info")
         exit(f"Места осталось менее 1 гигабайта!!!! {remaining_seat} байт ({size(remaining_seat)}). "
              "Создание бэкапов остановлено!!!")
