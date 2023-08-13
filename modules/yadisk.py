@@ -10,7 +10,7 @@ import os
 config = configparser.ConfigParser()
 config.sections()
 
-config.read('config.ini')
+config.read(f'{os.path.dirname(os.path.abspath(__file__))}/config/config.ini')
 
 
 def upload_to_yadisk(file_path, destination_path, token):
@@ -95,6 +95,5 @@ def start():
         deleting_max_backups(config['SETTING']['NAME_BACKUP_DIR_CLOUD'], yandex_token)
     else:
         write_log(f"Произошла неизвестная ошибка!", "error")
-
 
 # https://pypi.org/project/yadisk/

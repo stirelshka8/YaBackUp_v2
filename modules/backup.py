@@ -4,7 +4,9 @@ from datetime import datetime
 from modules.log import write_log
 
 
-def pack_directory(source_dirs, destination_dir='/tmp', excluded_dirs=None):
+def pack_directory(source_dirs,
+                   destination_dir=f'{os.path.dirname(os.path.abspath(__file__))}/tmp',
+                   excluded_dirs=None):
     write_log(f'Процесс создания временного архива запущен! '
               f'Упаковывается - {source_dirs}. '
               f'Временное расположение архива - {destination_dir}. '
