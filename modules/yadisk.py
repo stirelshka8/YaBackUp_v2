@@ -85,11 +85,12 @@ def start():
     excluded_directories = ("".join((config['SETTING']['DIR_EXCEPTION']).split(","))).split()
 
     if information(yandex_token):
-        upload_to_yadisk(pack_directory(source_directory, backup_dir, excluded_directories),
+        upload_to_yadisk(pack_directory(source_dirs=source_directory,
+                                        destination_dir=backup_dir,
+                                        excluded_dirs=excluded_directories),
                          f"/{config['SETTING']['NAME_BACKUP_DIR_CLOUD']}/"
                          f"{config['SETTING']['NAME_BACKUP']}_"
-                         f"{str(int(datetime.timestamp(datetime.now())))}",
-                         yandex_token)
+                         f"{str(int(datetime.timestamp(datetime.now())))}", yandex_token)
 
         deleting_old_backups(config['SETTING']['NAME_BACKUP_DIR_CLOUD'], yandex_token)
         deleting_max_backups(config['SETTING']['NAME_BACKUP_DIR_CLOUD'], yandex_token)
