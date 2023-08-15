@@ -1,0 +1,33 @@
+[1691946881]*[DISK_INFO] >> Оставшееся место на Яндекс.Диск 10737418240 байт (10G)
+[1691946881]*[INFO] >> Процесс создания временного архива запущен! Упаковывается - ['/home/stirelshka/snap']. Временное расположение архива - /home/stirelshka. Пропускается - ['code']
+[1691946881]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.themes
+[1691946881]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.local/share/themes
+[1691946883]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.config/ibus/bus
+[1691946883]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.config/gtk-2.0/gtkfilechooser.ini
+[1691946883]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.themes
+[1691946883]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.local/share/themes
+[1691946885]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.config/ibus/bus
+[1691946885]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.config/gtk-2.0/gtkfilechooser.ini
+[1691946885]*[INFO] >> Создан временный файл: /home/stirelshka/TEMPBACKUP_1691946881
+[1691946915]*[INFO] >> Файл бэкапа: /home/stirelshka/TEMPBACKUP_1691946881 загружен на Яндекс.Диск в директорию /BACKUP/admlab_lin_1691946885. 
+[1691946915]*[INFO] >> Временный файл: /home/stirelshka/TEMPBACKUP_1691946881 УДАЛЕН
+[1691946915]*[PASS] >> Архив бэкапа admlab_lin_1691946885 младше 5 дней.
+[1691947013]*[DISK_INFO] >> Оставшееся место на Яндекс.Диск 10431354880 байт (9G)
+[1691947013]*[INFO] >> Процесс создания временного архива запущен! Упаковывается - ['/home/stirelshka/snap']. Временное расположение архива - ['code']. Пропускается - None
+[1691947064]*[DISK_INFO] >> Оставшееся место на Яндекс.Диск 10431354880 байт (9G)
+[1691947064]*[INFO] >> Процесс создания временного архива запущен! Упаковывается - ['/home/stirelshka/snap']. Временное расположение архива - ['code']. Пропускается - None
+[1691947148]*[DISK_INFO] >> Оставшееся место на Яндекс.Диск 10431354880 байт (9G)
+[1691947148]*[INFO] >> Процесс создания временного архива запущен! Упаковывается - ['/home/stirelshka/snap']. Временное расположение архива - /home/stirelshka. Пропускается - ['code']
+[1691947148]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.themes
+[1691947148]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.local/share/themes
+[1691947149]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.config/ibus/bus
+[1691947149]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4896/.config/gtk-2.0/gtkfilechooser.ini
+[1691947149]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.themes
+[1691947149]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.local/share/themes
+[1691947150]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.config/ibus/bus
+[1691947150]*[PASS] >> Пропуск нечитаемого файла: /home/stirelshka/snap/telegram-desktop/4899/.config/gtk-2.0/gtkfilechooser.ini
+[1691947150]*[INFO] >> Создан временный файл: /home/stirelshka/TEMPBACKUP_1691947148
+[1691947177]*[INFO] >> Файл бэкапа: /home/stirelshka/TEMPBACKUP_1691947148 загружен на Яндекс.Диск в директорию /BACKUP/admlab_lin_1691947150. 
+[1691947177]*[INFO] >> Временный файл: /home/stirelshka/TEMPBACKUP_1691947148 УДАЛЕН
+[1691947178]*[PASS] >> Архив бэкапа admlab_lin_1691946885 младше 5 дней.
+[1691947178]*[PASS] >> Архив бэкапа admlab_lin_1691947150 младше 5 дней.
