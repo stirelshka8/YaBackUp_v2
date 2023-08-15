@@ -2,4 +2,4 @@
 /test.py
 /modules/config/config.ini
 /venv/
-/modules/logs/program_logs.txt
+program_logs.txt
