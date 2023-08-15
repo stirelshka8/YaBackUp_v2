@@ -3,3 +3,4 @@
 /modules/config/config.ini
 /program_logs.txt
 /venv/
+/modules/logs/program_logs.txt
